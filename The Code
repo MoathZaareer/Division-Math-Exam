@@ -1,0 +1,71 @@
+#Program still lacking
+import math
+import random
+
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+i = range(1, 11)
+j = range(1, 2)
+u = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+o = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+k = []
+l = []
+marks = 0
+
+def division(repeat):
+  global marks, trails, o, u
+  if repeat == 'yes':
+    for ii in i:
+      z = random.choice(u)
+      u.remove(z)
+      k.append(z)
+      for ies in j:
+        x = random.choice(o)
+        o.remove(x)
+        l.append(x)
+        ques = z * x
+        
+        if ii % 2 == 0:
+          quest = ques / x
+          print('Find: ' + str(ques) + ' / ' + str(x) + ' 🤔')
+        else:
+          quest = ques / z
+          print('Find: ' + str(ques) + ' / ' + str(z) + ' 🤔')
+        
+        ans = input('Answer: ')
+        answer = int(ans)
+        if answer == quest:
+          marks += 1
+        else:
+          marks += 0
+    for ii in i:
+      a = random.choice(k)
+      k.remove(a)
+      u.append(a)
+      for ies in j:
+        b = random.choice(l)
+        l.remove(b)
+        o.append(b)
+        ques = a * b
+        
+        if ii % 2 == 0:
+          quest = ques / a
+          print('Find: ' + str(ques) + ' / ' + str(a) + ' 🤔')
+        else:
+          quest = ques / b
+          print('Find: ' + str(ques) + ' / ' + str(b) + ' 🤔')
+        
+        ans = input('Answer: ')
+        answer = int(ans)
+        if answer == quest:
+          marks += 1
+        else:
+          marks += 0
+        
+        
+
+if trails <= 100:
+  u = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  division('yes')
+else:
+  print(str(marks) + ' out of 100')
+  print('Moneeeyyyy 🤑🤑🤑🤑🤑🤑')
